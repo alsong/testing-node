@@ -20,5 +20,30 @@ describe('UserService test', () => {
         })
     })
 
-  
+    
+    it('creates a user', () =>{
+        const save = sinon.spy();
+        let name;
+        let birthday;
+
+        const MockModel = function(data){
+            name = data.name;
+            birthday = data.birthday;
+
+            return{
+                ...data,
+                save
+            }
+        }
+
+        const userService = UserService(MockModel);
+        userService.createUser("foo","foo");
+
+        const expected = true;
+        const actual = save.calledOnce;
+        expect(actual).toEqual(expected);
+        expect(name).toEqual("foo");
+        expect(birthday).toEqual("foo");
+
+    })
 })
