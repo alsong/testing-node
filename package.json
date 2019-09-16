@@ -1,0 +1,21 @@
+{
+  "name": "test-node",
+  "version": "1.0.0",
+  "description": "Testing nodejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js",
+    "test:model":"jest --testPathPattern model_test",
+    "test:service":"jest --testPathPattern service_test",
+    "test:app":"jest --testPathPattern app_test"
+  },
+  "author": "alsong",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.1",
+    "mongoose": "5.6.9",
+    "sinon": "7.4.1",
+    "supertest": "4.0.2"
+  }
+}
